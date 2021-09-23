@@ -1,0 +1,75 @@
+class Kendaraan {
+  String namaKen = '';
+  String jenis = '';
+  double bobot = 0;
+  double bensin = 0;
+
+  Kendaraan(this.namaKen, this.jenis, this.bobot, this.bensin);
+
+  void kendaraanBerjalan(double jalan) {
+    bensin -= jalan;
+  }
+
+  void penumpangNaikMobil(double org) {
+    bobot += org * 10;
+  }
+
+  void penumpangTurunMobil(double org) {
+    bobot -= org * 10;
+  }
+}
+
+void main(List<String> args) {
+  Kendaraan mobil = Kendaraan('Avanza', 'Mobil', 100, 100);
+  Kendaraan motor = Kendaraan('Vega', 'Moto', 50, 30);
+
+  print('Nama ' +
+      mobil.jenis +
+      ' bernama ' +
+      mobil.namaKen +
+      ' bobot mobil sekarang ' +
+      mobil.bobot.toString() +
+      ' bensin mobil sekarang ' +
+      mobil.bensin.toString());
+
+  print('======================================================================');
+  for (int a = 0; a < 5; a++) {
+    mobil.kendaraanBerjalan(10);
+  }
+  mobil.penumpangNaikMobil(5);
+  mobil.penumpangTurunMobil(3);
+
+  print('Nama ' +
+      mobil.jenis +
+      ' bernama ' +
+      mobil.namaKen +
+      ' bobot mobil sekarang ' +
+      mobil.bobot.toString() +
+      ' bensin mobil sekarang ' +
+      mobil.bensin.toString());
+  print('==========================================================================');
+   print('Nama ' +
+      motor.jenis +
+      ' bernama ' +
+      motor.namaKen +
+      ' bobot mobil sekarang ' +
+      motor.bobot.toString() +
+      ' bensin mobil sekarang ' +
+      motor.bensin.toString());
+
+  print('======================================================================');
+  for (int a = 0; a < 5; a++) {
+    motor.kendaraanBerjalan(3);
+  }
+  motor.penumpangNaikMobil(2);
+  motor.penumpangTurunMobil(2);
+
+  print('Nama ' +
+      motor.jenis +
+      ' bernama ' +
+      motor.namaKen +
+      ' bobot mobil sekarang ' +
+      motor.bobot.toString() +
+      ' bensin mobil sekarang ' +
+      motor.bensin.toString()); 
+}
